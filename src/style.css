@@ -15,62 +15,21 @@
     font-size : 21pt;
     text-align: center;
     font-weight: bold;
-    margin-top:60px;
+    margin-top: 90px;
   }
   
-  .styleimage1{
-    width: 130px;
-    display: block;
-    margin-top: 40px;
-    margin-left: 380px;
-    border-radius: 200px;
-    display: inline-block;
-  }
-  .styleimage2{
-    width: 130px;
-    display: block;
-    margin-top: 40px;
-    margin-bottom: auto;
-    margin-left: 70px;
-    border-radius: 200px;
-    display: inline-block;
-  }
   
-  .Marlow{
+  .text-container{
+    display: flex;
     color: white;
     font-family: Avenir, Helvetica, Arial, sans-serif;
-    margin-top: 12px;
+    margin-top: -50px;
     font-size: 17px;
     font-weight: 550;
-    margin-left: 411px;
-    display: inline-block;
+    justify-content: center;
   }
-  .next{
-    color: white;
-    text-align: center;
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    font-size: 17px;
-    font-weight: 550;
-    margin-left: 144px;
-    display: inline-block;
-  }
-  .next2{
-    color: white;
-    text-align: center;
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    font-size: 17px;
-    font-weight: 550;
-    margin-left: 157px;
-    display: inline-block;
-  }
-  .next3{
-    color: white;
-    text-align: center;
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    font-size: 17px;
-    font-weight: 550;
-    margin-left: 154px;
-    display: inline-block;
+  .text{
+    padding: 55px;
   }
   button{
     color: white;
@@ -87,5 +46,13 @@
     right: 20px;
   }
   
-  
-  
+  .image-container{
+    display: flex;
+    justify-content: center;
+    
+  }
+  .image-container img{
+    width: 100px;
+    border-radius: 100px;
+    padding: 30px;
+  }
