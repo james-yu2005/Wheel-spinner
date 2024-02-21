@@ -1,0 +1,91 @@
+.imgdisney{
+    width: 120px;
+    display: block;
+    margin-right: auto;
+  }
+  body{
+   
+    background-color: #131520;
+  
+  }
+  
+  h1{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    color: white;
+    font-size : 21pt;
+    text-align: center;
+    font-weight: bold;
+    margin-top:60px;
+  }
+  
+  .styleimage1{
+    width: 130px;
+    display: block;
+    margin-top: 40px;
+    margin-left: 380px;
+    border-radius: 200px;
+    display: inline-block;
+  }
+  .styleimage2{
+    width: 130px;
+    display: block;
+    margin-top: 40px;
+    margin-bottom: auto;
+    margin-left: 70px;
+    border-radius: 200px;
+    display: inline-block;
+  }
+  
+  .Marlow{
+    color: white;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    margin-top: 12px;
+    font-size: 17px;
+    font-weight: 550;
+    margin-left: 411px;
+    display: inline-block;
+  }
+  .next{
+    color: white;
+    text-align: center;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 550;
+    margin-left: 144px;
+    display: inline-block;
+  }
+  .next2{
+    color: white;
+    text-align: center;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 550;
+    margin-left: 157px;
+    display: inline-block;
+  }
+  .next3{
+    color: white;
+    text-align: center;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 550;
+    margin-left: 154px;
+    display: inline-block;
+  }
+  button{
+    color: white;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    background-color: rgb(61, 61, 61);
+    padding: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1.5px;
+    border: rgb(61, 61, 61);
+    font-size: 12px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+  
+  
+  
