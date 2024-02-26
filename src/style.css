@@ -47,16 +47,14 @@
   
   .image-container{
     display: flex;
-    justify-content: space-around;
-    
+    justify-content: center;
   }
   .image-container img{
     width: 100px;
     border-radius: 100px;
+    padding: 30px;
   }
 
   img:hover{
-    border: solid 3px white;
-    transform:scale(1.2);
-    
+    transform:scale(1.3);
   }
