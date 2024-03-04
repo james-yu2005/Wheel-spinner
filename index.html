@@ -4,58 +4,67 @@
 
     <style>
         body{
-          background-image: url("https://wallpapers.com/images/high/grape-farm-art-a7nvwxvybxwl0thl.webp");
+          background-image: url("https://pinata.fi/wp-content/uploads/2020/12/hr_scroll_05-1.jpg");
           background-repeat: no-repeat;
           background-image: cover;
           height: 100%;
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
-          opacity: 1;
+          opacity: 0.9;
         }
-
+        
+        
         .header{
             padding: 40px;
-            color: black;
+            color: white;
             margin: 0 auto;
             margin-bottom: 40px;
-            
         }
         .header h1,p{
             text-align: center;
         }
-
+        .inline{
+          display: flex;
+          justify-content: center;
+          font-weight: 1;
+        }
+        .caption{
+          font-weight: 1;
+        }
+        .winner{
+          font-weight: 1;
+        }
         .wheel{
             display: flex;
             justify-content: center;
             position: relative;
-            opacity: 1.3;
-            
+            opacity: 1;
         }
         .center-circle{
-            width: 100px;
-            height: 100px;
-            border-radius: 60px;
+            width: 80px;
+            height: 80px;
+            border-radius: 100px;
             background-color: #fff;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
         }
         .center-circle:hover{
-            background-color: green;
-            width: 100px;
-            height: 100px;
-            border: 2px solid black;
+            background-color: white;
+            width: 80px;
+            height: 80px;
+            border: 3px solid black;
         }
         .triangle{
             width: 0; 
             height: 0; 
             border-top: 10px solid transparent;
             border-bottom: 10px solid transparent; 
-            border-right: 30px solid white; 
+            border-right:30px solid white; 
             position: absolute;
             top: 50%;
-            right: -220%;
+            right: -280%;
             transform: translateY(-50%);
         }
         textarea{
@@ -146,8 +155,12 @@
 
 <body >
     <div class="header">
-        <h1>WELCOME TO MYRTLE'S WHEEL!</h1>
-        <p id="winner">Wheel for specifically Rachel</p>
+        <h1>Welcome to Rachel's fruit wheel!</h1>
+        <div class="inline">
+          <h3 class="caption">Winner: &nbsp</p> 
+          <h3 id="winner" class="winner"> Rachel</p>
+          <h3 id="winner" class="winner"> &nbsp!</p>
+      </div>
     </div>
     <div class="wheel">
         <canvas class="" id="canvas" width="500" height="500"></canvas>
@@ -157,7 +170,7 @@
         
     </div>
     <div class="inputArea" onchange="createWheel()">
-        <textarea rows="20" cols="30" >myrtle
+        <textarea rows="6" cols="10" >myrtle
 myrtle2
 myrtle3
 myrtle4
@@ -176,9 +189,10 @@ continue</textarea>
 
     <script>
         function randomColor(){
-            r = Math.floor(Math.random() * 245);
-            g = Math.floor(Math.random() * 245);
-            b = Math.floor(Math.random() * 245);
+            r = Math.floor(Math.random() * 30)+200;
+            g = Math.floor(Math.random() * 20)+140;
+            b = Math.floor(Math.random() * 245)-230;
+            
             return {r,g,b}
         }
         function toRad(deg){
@@ -315,7 +329,7 @@ continue</textarea>
             draw();
 
             
-            maxRotation = randomRange(360*3, 320* 8)
+            maxRotation = randomRange(360*2, 320* 6)
             itemDegs = {}
             console.log("max",maxRotation)
             console.log(itemDegs);
@@ -332,7 +346,7 @@ continue</textarea>
 
         button.addEventListener('click', () => {
         jsConfetti.addConfetti({
-        emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+        emojis: ['🍇', '🍐', '🍅', '🍓', '🫐', '🥝', '🍌'],
         }).then(() => jsConfetti.addConfetti())
         })
     </script>
