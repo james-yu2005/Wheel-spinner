@@ -1,53 +1,331 @@
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="src/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Link to clone</title>
-  </head>
+<html>
+<head>
 
-  <body>
-    
-  
-      <img src="/src/images/logo.png" class="imgdisney"/>
+    <style>
+        body{
+            background-image: url("https://www.thesprucepets.com/thmb/HKSboHqgsaPqyQUaII_jq2MOj0o=/3510x0/filters:no_upscale():strip_icc()/red-eared-slider--trachemys-scripta-elegans--standing-on-wood--texas--usa-980454648-6abd20d07aa541679c70e47dd15144ee.jpg");
+            background-repeat: no-repeat;
+            background-image: cover;
+        }
+
+        .header{
+            padding: 40px;
+            color: #fff;
+            margin: 0 auto;
+            margin-bottom: 40px;
+        }
+        .header h1,p{
+            text-align: center;
+        }
+
+        .wheel{
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        .center-circle{
+            width: 100px;
+            height: 100px;
+            border-radius: 60px;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .center-circle:hover{
+            background-color: green;
+            width: 105px;
+            height: 105px;
+        }
+        .triangle{
+            width: 0; 
+            height: 0; 
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent; 
+            border-right: 30px solid white; 
+            position: absolute;
+            top: 50%;
+            right: -220%;
+            transform: translateY(-50%);
+        }
+        textarea{
+            background-color: rgba(20, 20, 20, 0.2);
+            caret-color: #fff;
+            resize: none;
+            color: #fff;
+        }
+        .inputArea{
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+    </style>
+    <style>
+        body {
+            
+          }
+          
+          canvas#confetti {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            z-index: 1000;
+            pointer-events: none;
+          }
+          
+          /* CSS */
+          .button-53 {
+            background-color: #3dd1e7;
+            border: 0 solid #e5e7eb;
+            box-sizing: border-box;
+            color: #000000;
+            display: flex;
+            font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI",
+              Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+              "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 1rem;
+            font-weight: 700;
+            justify-content: center;
+            line-height: 1.75rem;
+            padding: 0.75rem 1.65rem;
+            position: relative;
+            text-align: center;
+            text-decoration: none #000000 solid;
+            text-decoration-thickness: auto;
+            width: 100%;
+            max-width: 460px;
+            position: relative;
+            cursor: pointer;
+            transform: rotate(-2deg);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+          }
+          
+          .button-53:focus {
+            outline: 0;
+          }
+          
+          .button-53:after {
+            content: "";
+            position: absolute;
+            border: 1px solid #000000;
+            bottom: 4px;
+            left: 4px;
+            width: calc(100% - 1px);
+            height: calc(100% - 1px);
+          }
+          
+          .button-53:hover:after {
+            bottom: 2px;
+            left: 2px;
+          }
+          
+          @media (min-width: 768px) {
+            .button-53 {
+              padding: 0.75rem 3rem;
+              font-size: 1.25rem;
+            }
+          }
+          
+    </style>
+</head>
+
+<body >
+    <div class="header">
+        <h1>WELCOME TO MYRTLE'S WHEEL!</h1>
+        <p id="winner">Note: Never remove "myrtle" from the text box or the wheel will stop spinning</p>
+    </div>
+    <div class="wheel">
+        <canvas class="" id="canvas" width="500" height="500"></canvas>
+        <div class="center-circle" onclick="spin()">
+            <div class="triangle"></div>
+        </div>
         
-      <h1><b>Who's watching?</b></h1>
+    </div>
+    <div class="inputArea" onchange="createWheel()">
+        <textarea rows="20" cols="30" >myrtle
+myrtle2
+myrtle3
+myrtle4
+myrtle5
+continue</textarea>
+    </div>
+    
+    <canvas id="confetti"></canvas>
 
-    <div class="image-container">
-      <a href="https://james-disney.vercel.app/">
-        <img src="/src/images/person.png"/>
-      </a>
-     
-      <a href="https://james-disney.vercel.app/">
-        <img src="/src/images/patrick.jpg" />
-      </a>
-    
-    
-      <a href="https://james-disney.vercel.app/">
-        <img src="/src/images/james.jpg"/>
-      </a>
-    
-      <a href="https://james-disney.vercel.app/">
-        <img src="/src/images/matthew.jpg"/>
-      </a>
-    </div>
-    <div class="text-container">
-      <div class="text">Marlow</div>
-      <div class="text">Patrick</div>
-      <div class="text">Me</div>
-      <div class="text">Matthew</div>
+    <button id="button" class="button-53" role="button">Celebrate!!!</button>
 
-    </div>
-      <div class="btneditor">
-        <button> EDIT PROFILES</button>
-      </div>
-    
-    </div>
-    </body>
-  
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script src="script.js"></script>
+
+
+
+    <script>
+        function randomColor(){
+            r = Math.floor(Math.random() * 245);
+            g = Math.floor(Math.random() * 245);
+            b = Math.floor(Math.random() * 245);
+            return {r,g,b}
+        }
+        function toRad(deg){
+            return deg * (Math.PI / 180.0);
+        }
+        function randomRange(min,max){
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function easeOutSine(x) {
+            return Math.sin((x * Math.PI) / 2);
+        }
+        // get percent between 2 number
+        function getPercent(input,min,max){
+            return (((input - min) * 100) / (max - min))/100
+        }
+    </script>
+
+    <script>
+        const canvas = document.getElementById("canvas")
+        const ctx = canvas.getContext("2d")
+        const width = document.getElementById("canvas").width
+        const height = document.getElementById("canvas").height
+
+        const centerX = width/2
+        const centerY = height/2
+        const radius = width/2
+
+        let items = document.getElementsByTagName("textarea")[0].value.split("\n");
+
+        let currentDeg = 0
+        let step = 360/items.length
+        let colors = []
+        let itemDegs = {}
+
+        for(let i = 0 ; i < items.length + 1;i++){
+            colors.push(randomColor())
+        }
+
+        function createWheel(){
+            items = document.getElementsByTagName("textarea")[0].value.split("\n");
+            step = 360/items.length
+            colors = []
+            for(let i = 0 ; i < items.length + 1;i++){
+                colors.push(randomColor())
+            }
+            draw()
+        }
+        draw()
+
+        function draw(){
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, toRad(0), toRad(360))
+            ctx.fillStyle = `rgb(${33},${33},${33})`
+            ctx.lineTo(centerX, centerY);
+            ctx.fill()
+
+            let startDeg = currentDeg;
+            for(let i = 0 ; i < items.length; i++, startDeg += step){
+                let endDeg = startDeg + step
+
+                color = colors[i]
+                let colorStyle = `rgb(${color.r},${color.g},${color.b})`
+
+                ctx.beginPath();
+                rad = toRad(360/step);
+                ctx.arc(centerX, centerY, radius - 2, toRad(startDeg), toRad(endDeg))
+                let colorStyle2 = `rgb(${color.r - 30},${color.g - 30},${color.b - 30})`
+                ctx.fillStyle = colorStyle2
+                ctx.lineTo(centerX, centerY);
+                ctx.fill()
+
+                ctx.beginPath();
+                rad = toRad(360/step);
+                ctx.arc(centerX, centerY, radius - 30, toRad(startDeg), toRad(endDeg))
+                ctx.fillStyle = colorStyle
+                ctx.lineTo(centerX, centerY);
+                ctx.fill()
+
+                // draw text
+                ctx.save();
+                ctx.translate(centerX, centerY);
+                ctx.rotate(toRad((startDeg + endDeg)/2));
+                ctx.textAlign = "center";
+                if(color.r > 150 || color.g > 150 || color.b > 150){
+                    ctx.fillStyle = "#000";
+                }
+                else{
+                    ctx.fillStyle = "#fff";
+                }
+                ctx.font = 'bold 24px serif';
+                ctx.fillText(items[i], 130, 10);
+                ctx.restore();
+
+                itemDegs[items[i]] = 
+                    {
+                    "startDeg": startDeg,
+                    "endDeg" : endDeg
+                    }
+                
+
+                // check winner
+                if(startDeg%360 < 360 && startDeg%360 > 270  && endDeg % 360 > 0 && endDeg%360 < 90 ){
+                    document.getElementById("winner").innerHTML = items[i]
+                }
+            }
+        }
+        
+
+        let speed = 0
+        let maxRotation = randomRange(360* 3, 360 * 6)
+        let pause = false
+        function animate(){
+            if(pause){
+                return
+            }
+            speed = easeOutSine(getPercent(currentDeg ,maxRotation ,0)) * 20
+            if(speed < 0.01){
+                speed = 0
+                pause = true
+            }
+            currentDeg += speed
+            draw()
+            window.requestAnimationFrame(animate);
+        }
+        
+        function spin(){
+            if(speed != 0){
+                return
+            }
+
+            maxRotation = 0;
+            currentDeg = 0
+            createWheel()
+            draw();
+
+            
+            maxRotation = (360 * 6) - itemDegs['myrtle'].endDeg + 10
+            itemDegs = {}
+            console.log("max",maxRotation)
+            console.log(itemDegs);
+            pause = false
+            window.requestAnimationFrame(animate);
+        }
+
+    </script>
+    <script>
+        const button = document.querySelector('#button');
+        const canvas2 = document.querySelector('#confetti');
+
+        const jsConfetti = new JSConfetti();
+
+        button.addEventListener('click', () => {
+        jsConfetti.addConfetti({
+        emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+        }).then(() => jsConfetti.addConfetti())
+        })
+    </script>
+</body>
+
 </html>
-
-  
-     
